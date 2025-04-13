@@ -17,12 +17,12 @@ export default function AuthenticateComponent(token){
                 }
             })
             const rawData = await response.json()
-            setSuccessMessage(rawData.message)
             setReturnedUsername(rawData.data.username)
-            console.log(rawData.data.username)
+            setSuccessMessage(rawData.message)
+            setError(null)
         } catch (error) {
             setError(error.message);
-            console.log(error.message)
+            console.log(error)
         }
     }
 
